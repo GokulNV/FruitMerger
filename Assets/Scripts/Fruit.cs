@@ -5,6 +5,8 @@ public class Fruit : MonoBehaviour
 {
     // Public property
     public FruitType FruitType { get; private set; }
+    public bool IsInitialCollision = true;
+
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _spriteRenderer;
 
@@ -16,6 +18,8 @@ public class Fruit : MonoBehaviour
     {
         FruitType = detail.FruitType;
         UpdateAppearance(detail);
+        if(_rigidbody == null)
+            _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     private void Start()

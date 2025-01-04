@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a765fece86f3b1d41a998b92d34b3785, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsInitialCollision: 1
 --- !u!114 &5324896188224903166
 MonoBehaviour:
   m_ObjectHideFlags: 0

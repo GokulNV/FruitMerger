@@ -1,35 +1,27 @@
-using System;
 using UnityEngine;
 
 public static class EventManager
 {
-    // Delegate for fruit merging events
-    public delegate void OnFruitMerge(Fruit fruit1, Fruit fruit2);
-    public static event OnFruitMerge FruitMergeEvent;
+    public delegate void FruitInitialiseDelegate(GameObject fruitObj);
+    public static event FruitInitialiseDelegate OnFruitInitialise;
 
-    // Delegate for fruit moving events
-    public delegate void FruitMovedHandler(Vector3 newPosition);
-    public static event FruitMovedHandler OnFruitMoved;
+    public delegate void FruitDroppedDelegate();
+    public static event FruitDroppedDelegate OnFruitDroppedEvent;
 
-    public delegate void FruitDroppedHandler();
-    public static event FruitDroppedHandler OnFruitDropped;
+    public delegate void FruitMergeDelegate(Fruit fruit1, Fruit fruit2);
+    public static event FruitMergeDelegate OnFruitMergeEvent;
+
+    public delegate void NextSpawnDelegate();
+    public static event NextSpawnDelegate OnNextSpawnEvent;
 
     /// <summary>
     /// Invokes the FruitMerge event.
     /// </summary>
     /// <param name="fruit1">The first fruit involved in the merge.</param>
     /// <param name="fruit2">The second fruit involved in the merge.</param>
-    public static void InvokeFruitMerge(Fruit fruit1, Fruit fruit2)
+    public static void InvokeFruitInitialise(GameObject fruitObj)
     {
-        FruitMergeEvent?.Invoke(fruit1, fruit2);
-    }
-
-    /// <summary>
-    /// Invokes the FruitMoved event.
-    /// </summary>
-    public static void InvokeFruitMoved(Vector3 newPosition)
-    {
-        OnFruitMoved?.Invoke(newPosition);
+        OnFruitInitialise?.Invoke(fruitObj);
     }
 
     /// <summary>
@@ -37,6 +29,21 @@ public static class EventManager
     /// </summary>
     public static void InvokeFruitDropped()
     {
-        OnFruitDropped?.Invoke();
+        OnFruitDroppedEvent?.Invoke();
+    }
+
+    /// <summary>
+    /// Invokes the FruitMerge event.
+    /// </summary>
+    /// <param name="fruit1">The first fruit involved in the merge.</param>
+    /// <param name="fruit2">The second fruit involved in the merge.</param>
+    public static void InvokeFruitMerged(Fruit fruit1, Fruit fruit2)
+    {
+        OnFruitMergeEvent?.Invoke(fruit1, fruit2);
+    }
+
+    public static void InvokeNextSpawn()
+    {
+        OnNextSpawnEvent?.Invoke();
     }
 }

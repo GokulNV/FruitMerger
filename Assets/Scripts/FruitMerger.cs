@@ -10,12 +10,17 @@ public class FruitMerger : MonoBehaviour
     {
         Fruit fruit1 = GetComponent<Fruit>();
         Fruit fruit2 = collision.gameObject.GetComponent<Fruit>();
-        Debug.Log("Collision happened");
 
         if (fruit2 != null && fruit1.FruitType == fruit2.FruitType)
         {
             // Invoke the FruitMerge event through EventManager
-            EventManager.InvokeFruitMerge(fruit1, fruit2);
+            EventManager.InvokeFruitMerged(fruit1, fruit2);
+        }
+
+        if(fruit1.IsInitialCollision)
+        {
+           fruit1.IsInitialCollision = false;
+           EventManager.InvokeNextSpawn();
         }
     }
 }
