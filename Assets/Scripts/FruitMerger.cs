@@ -20,7 +20,7 @@ public class FruitMerger : MonoBehaviour
         if(fruit1.IsInitialCollision)
         {
            fruit1.IsInitialCollision = false;
-           EventManager.InvokeNextSpawn();
+           EventManager.InvokeNextSpawn(); //ToDo: change this logic later. this to initiate next spawn. instead do it after dropping.
         }
     }
 }

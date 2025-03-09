@@ -1,10 +1,23 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public FruitData FruitDataAsset; // Reference to the FruitData asset
     private GameObject _currentFruit; // Currently spawned fruit
+
+    private static GameManager _instance;
+    public static GameManager Instance
+    {
+        get { return _instance; }
+        set { _instance = value; }
+    }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {        

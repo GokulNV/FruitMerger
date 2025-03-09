@@ -8,7 +8,7 @@ public class FruitSpawner : MonoBehaviour
 
     [SerializeField] private GameObject _fruitPrefab; // Prefab for the fruit
     [SerializeField] private Transform _spawnParent; //spawn parent for the fruit clones
-    [SerializeField] private float _spawnDelay = 2f; // Delay before spawning the next fruit
+    [SerializeField] private float _spawnDelay = 1.5f; // Delay before spawning the next fruit
     [SerializeField] private Image _nextSpawnFruitImg;
 
     private FruitDetail _nextFruitDetail;

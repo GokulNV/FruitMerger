@@ -29,6 +29,7 @@ public class FruitDetail
     public FruitType FruitType; // Use the FruitType enum
     public float InitialSize; // Starting size of the fruit
     public Sprite FruitSprite; // Sprite for the fruit appearance
+    public int ScoreForMerge; // Score awarded for each merge by this type 
 }
 
 [Serializable]

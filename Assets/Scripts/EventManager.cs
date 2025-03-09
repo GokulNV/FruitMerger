@@ -14,6 +14,10 @@ public static class EventManager
     public delegate void NextSpawnDelegate();
     public static event NextSpawnDelegate OnNextSpawnEvent;
 
+    public delegate void UpdateScoreDelegate(int score);
+    public static event UpdateScoreDelegate OnUpdateScoreEvent;
+    public static event UpdateScoreDelegate OnUpdateHighScoreEvent;
+
     /// <summary>
     /// Invokes the FruitMerge event.
     /// </summary>
@@ -45,5 +49,15 @@ public static class EventManager
     public static void InvokeNextSpawn()
     {
         OnNextSpawnEvent?.Invoke();
+    }
+
+    public static void InvokeUpdateScore(int score)
+    {
+        OnUpdateScoreEvent?.Invoke(score);
+    }
+
+    public static void InvokeUpdateHighScore(int score)
+    {
+        OnUpdateHighScoreEvent?.Invoke(score);
     }
 }
