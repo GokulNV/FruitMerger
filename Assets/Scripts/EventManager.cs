@@ -2,6 +2,9 @@ using UnityEngine;
 
 public static class EventManager
 {
+    public delegate void InitialiseGameDelegate();
+    public static event InitialiseGameDelegate OnInitialiseGame;
+
     public delegate void FruitInitialiseDelegate(GameObject fruitObj);
     public static event FruitInitialiseDelegate OnFruitInitialise;
 
@@ -17,6 +20,11 @@ public static class EventManager
     public delegate void UpdateScoreDelegate(int score);
     public static event UpdateScoreDelegate OnUpdateScoreEvent;
     public static event UpdateScoreDelegate OnUpdateHighScoreEvent;
+
+    public static void InvokeInitialiseGame()
+    {
+        OnInitialiseGame?.Invoke();
+    }
 
     /// <summary>
     /// Invokes the FruitMerge event.

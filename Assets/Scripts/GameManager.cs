@@ -1,5 +1,3 @@
-using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -19,12 +17,22 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
-    private void Start()
-    {        
+    private void OnEnable()
+    {
         // Subscribe to events from EventManager
         EventManager.OnFruitInitialise += InitialiseCurrentFruit;
         EventManager.OnFruitDroppedEvent += HandleFruitDropped;
         EventManager.OnFruitMergeEvent += HandleFruitMerge;
+
+        EventManager.InvokeInitialiseGame();
+    }
+
+    private void OnDisable()
+    {
+        // Subscribe to events from EventManager
+        EventManager.OnFruitInitialise -= InitialiseCurrentFruit;
+        EventManager.OnFruitDroppedEvent -= HandleFruitDropped;
+        EventManager.OnFruitMergeEvent -= HandleFruitMerge;
     }
 
     private void InitialiseCurrentFruit(GameObject fruit)

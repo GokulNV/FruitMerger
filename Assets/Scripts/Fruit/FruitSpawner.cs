@@ -14,10 +14,23 @@ public class FruitSpawner : MonoBehaviour
     private FruitDetail _nextFruitDetail;
     private GameObject _currentFruit; // Currently spawned fruit
 
-    private void Start()
+    private void OnEnable()
     {       
         // Subscribe to events from EventManager
         EventManager.OnNextSpawnEvent += StartTimerForNextSpawn;
+        EventManager.OnInitialiseGame += InitialiseFirstSpawn;
+    }
+
+    private void OnDisable()
+    {       
+        // Subscribe to events from EventManager
+        EventManager.OnNextSpawnEvent -= StartTimerForNextSpawn;
+        EventManager.OnInitialiseGame -= InitialiseFirstSpawn;
+    }
+
+    private void InitialiseFirstSpawn()
+    {
+        
     }
 
     public void StartSpawn()
@@ -29,7 +42,7 @@ public class FruitSpawner : MonoBehaviour
     /// Spawns a new fruit at a random position and initializes it with random details.
     /// </summary>
     private void SpawnFruit()
-    {
+    {      
         // Instantiate the fruit prefab at a fixed height
         _currentFruit = Instantiate(_fruitPrefab, _spawnParent);
         EventManager.InvokeFruitInitialise(_currentFruit);

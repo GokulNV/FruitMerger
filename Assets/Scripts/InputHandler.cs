@@ -7,10 +7,15 @@ public class InputHandler : MonoBehaviour
     private GameObject _currentFruit; // Reference to the current fruit being moved
     private bool _isDragging;
 
-    private void Start()
+    private void OnEnable()
     {
         EventManager.OnFruitInitialise += SetCurrentFruit;
     } 
+
+    private void OnDisable()
+    {
+        EventManager.OnFruitInitialise -= SetCurrentFruit;
+    }
 
     /// <summary>
     /// Sets the current fruit being manipulated.
