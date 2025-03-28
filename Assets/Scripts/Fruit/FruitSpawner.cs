@@ -8,7 +8,7 @@ public class FruitSpawner : MonoBehaviour
 
     [SerializeField] private GameObject _fruitPrefab; // Prefab for the fruit
     [SerializeField] private Transform _spawnParent; //spawn parent for the fruit clones
-    [SerializeField] private float _spawnDelay = 1.5f; // Delay before spawning the next fruit
+    [SerializeField] private float _spawnDelay = 1f; // Delay before spawning the next fruit
     [SerializeField] private Image _nextSpawnFruitImg;
 
     private FruitDetail _nextFruitDetail;
@@ -16,15 +16,13 @@ public class FruitSpawner : MonoBehaviour
 
     private void OnEnable()
     {       
-        // Subscribe to events from EventManager
-        EventManager.OnNextSpawnEvent += StartTimerForNextSpawn;
+        EventManager.OnFruitDroppedEvent += StartTimerForNextSpawn;
         EventManager.OnInitialiseGame += InitialiseFirstSpawn;
     }
 
     private void OnDisable()
     {       
-        // Subscribe to events from EventManager
-        EventManager.OnNextSpawnEvent -= StartTimerForNextSpawn;
+        EventManager.OnFruitDroppedEvent -= StartTimerForNextSpawn;
         EventManager.OnInitialiseGame -= InitialiseFirstSpawn;
     }
 

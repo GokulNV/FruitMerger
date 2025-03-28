@@ -366,9 +366,9 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.0512, y: 0.0512, z: 0.0512, w: 0.0512}
+    border: {x: 0.64, y: 0.64, z: 0.64, w: 0.64}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2048, y: 0.2048}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 1, y: 6}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
@@ -1139,9 +1139,9 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.0512, y: 0.0512, z: 0.0512, w: 0.0512}
+    border: {x: 0.64, y: 0.64, z: 0.64, w: 0.64}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2048, y: 0.2048}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 1, y: 6}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
@@ -1234,7 +1234,7 @@ MonoBehaviour:
   _fruitSpawnOptions: {fileID: 11400000, guid: cbcaafc645b79544aa50e38b80f7add4, type: 2}
   _fruitPrefab: {fileID: 3083654047943937594, guid: 9efe2be0cbf061a40a1533a26f467745, type: 3}
   _spawnParent: {fileID: 1988166621}
-  _spawnDelay: 2
+  _spawnDelay: 1
   _nextSpawnFruitImg: {fileID: 157988885}
 --- !u!4 &684508619
 Transform:
@@ -1424,9 +1424,9 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.0512, y: 0.0512, z: 0.0512, w: 0.0512}
+    border: {x: 0.64, y: 0.64, z: 0.64, w: 0.64}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2048, y: 0.2048}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 1, y: 4.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
@@ -2238,9 +2238,9 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.0512, y: 0.0512, z: 0.0512, w: 0.0512}
+    border: {x: 0.64, y: 0.64, z: 0.64, w: 0.64}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2048, y: 0.2048}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 1, y: 4.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 1

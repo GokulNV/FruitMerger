@@ -4,7 +4,6 @@ public class Fruit : MonoBehaviour
 {
     // Public property
     public FruitType FruitType { get; private set; }
-    public bool IsInitialCollision = true;
 
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _spriteRenderer;
