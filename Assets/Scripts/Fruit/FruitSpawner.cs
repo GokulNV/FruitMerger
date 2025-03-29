@@ -43,17 +43,22 @@ public class FruitSpawner : MonoBehaviour
     {      
         // Instantiate the fruit prefab at a fixed height
         _currentFruit = Instantiate(_fruitPrefab, _spawnParent);
-        EventManager.InvokeFruitInitialise(_currentFruit);
         
         // Initialize with FruitDetail
         Fruit fruit = _currentFruit.GetComponent<Fruit>();
         FruitDetail fruitDetail;
         if (_nextFruitDetail == null)
+        {
             fruitDetail = GetRandomFruitDetail();
+        }
         else
+        {
             fruitDetail = _nextFruitDetail; 
-       
+        }
+        
         fruit.Initialize(fruitDetail);
+       
+        EventManager.InvokeFruitInitialise(_currentFruit);
         SetNextFruitDetails();
     }
 

@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
         {
             // Initialize fruit1 with the new details
             fruit1.Initialize(newFruitDetail);
+            fruit1.PlayMergeVFX();
         }
 
         // Destroy the merged fruit

@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 187913769}
   - component: {fileID: 187913771}
   - component: {fileID: 187913770}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1083,7 +1083,7 @@ GameObject:
   - component: {fileID: 664645486}
   - component: {fileID: 664645490}
   - component: {fileID: 664645489}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1368,7 +1368,7 @@ GameObject:
   - component: {fileID: 1102090346}
   - component: {fileID: 1102090348}
   - component: {fileID: 1102090347}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1496,7 +1496,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1110003552}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2053,8 +2053,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.09, y: -129.28}
-  m_SizeDelta: {x: 880, y: 1270}
+  m_AnchoredPosition: {x: -0.61, y: -129.28}
+  m_SizeDelta: {x: 808.64, y: 1270}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1680708663
 MonoBehaviour:
@@ -2104,7 +2104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1686951372}
   - component: {fileID: 1686951373}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2182,7 +2182,7 @@ GameObject:
   - component: {fileID: 1714482876}
   - component: {fileID: 1714482878}
   - component: {fileID: 1714482877}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2446,7 +2446,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1901390152}
   - component: {fileID: 1901390153}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}

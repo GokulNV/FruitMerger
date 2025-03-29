@@ -8,8 +8,8 @@ public static class EventManager
     public delegate void FruitInitialiseDelegate(GameObject fruitObj);
     public static event FruitInitialiseDelegate OnFruitInitialise;
 
-    public delegate void FruitDroppedDelegate();
-    public static event FruitDroppedDelegate OnFruitDroppedEvent;
+    public delegate void FruitMovementDelegate();
+    public static event FruitMovementDelegate OnFruitDroppedEvent;
 
     public delegate void FruitMergeDelegate(Fruit fruit1, Fruit fruit2);
     public static event FruitMergeDelegate OnFruitMergeEvent;

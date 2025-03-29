@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class Fruit : MonoBehaviour
 {
-    // Public property
     public FruitType FruitType { get; private set; }
+
+    [SerializeField] private ParticleSystem _mergeVFX;
 
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _spriteRenderer;
@@ -26,18 +27,23 @@ public class Fruit : MonoBehaviour
         _rigidbody.isKinematic = true; // Prevent it from falling until dropped
     }
 
-    public void Drop()
-    {
-        _rigidbody.isKinematic = false; // Allow it to fall
-    }
-
     private void UpdateAppearance(FruitDetail detail)
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _spriteRenderer.sprite = detail.FruitSprite;
 
         // Update the scale based on the size
-        float scaleFactor = detail.InitialSize; // Example scaling factor
-        transform.localScale = new Vector3(scaleFactor, scaleFactor, 1);
+        var scale = detail.InitialSize;
+        transform.localScale = new Vector3(scale, scale, 1);
+    }
+
+    public void Drop()
+    {
+        _rigidbody.isKinematic = false; // Allow it to fall
+    }
+
+    public void PlayMergeVFX()
+    {
+        _mergeVFX.Play();
     }
 }
